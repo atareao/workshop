@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='pico.css') }}">
+        <title>Hola, que tal {{nombre}}</title>
+        <meta charset="utf-8" />
+        <style>
+            body{
+                width: 100%;
+                margin: 0;
+            }
+            #principles hgroup{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section id="principles">
+                <div class="container">
+                    <hgroup>
+                        <h2>Docker Workshop</h2>
+                        <h3>Un taller de Docker en Linux Center</h3>
+                        <table>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                            </tr>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{user.fname}}</td>
+                                <td>{{user.lname}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </hgroup>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
